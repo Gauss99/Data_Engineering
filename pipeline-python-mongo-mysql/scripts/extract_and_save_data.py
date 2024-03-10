@@ -5,12 +5,13 @@ from dotenv import load_dotenv
 import os
 
 load_dotenv()
+uri = load_dotenv("MONGODB_URI")
 
 class mongodb_connection():
 
     def connect_mongo(self):
 
-        uri = load_dotenv("MONGODB_URI")
+        
         # Create a new client and connect to the server
         client = MongoClient(uri, server_api=ServerApi('1'))
         # Send a ping to confirm a successful connection
